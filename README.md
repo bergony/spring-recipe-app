@@ -1,1 +1,1 @@
-# spring-recice-app
+# spring-recipe-app
