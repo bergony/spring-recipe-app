@@ -1,24 +1,22 @@
 package com.example.springrecipeapp.domain;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-public class Notes {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String description;
 
-    @OneToOne
-    private Recipe recipe;
-
-    @Lob
-    private String recipeNotes;
+    @ManyToMany(mappedBy = "categories")
+    private Set<Recipe> recipes;
 
 }
