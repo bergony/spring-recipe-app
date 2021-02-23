@@ -1,14 +1,13 @@
 package com.example.springrecipeapp.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
 
+@Data
+@EqualsAndHashCode(exclude = {"recipes"})
 @Entity
-@Getter
-@Setter
 public class Category {
 
     @Id
