@@ -1,4 +1,4 @@
-version: 2.
+version: 2.1
 run:
   name: chmod permissions
   command: chmod +x ./gradlew
