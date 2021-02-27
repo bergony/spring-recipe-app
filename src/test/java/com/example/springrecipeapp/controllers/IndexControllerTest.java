@@ -5,10 +5,8 @@ import com.example.springrecipeapp.domain.Recipe;
 import com.example.springrecipeapp.services.RecipeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -66,7 +64,7 @@ class IndexControllerTest {
 
         recipes.add(recipe);
 
-        when(recipeService.getRecipe()).thenReturn(recipes);
+        when(recipeService.getRecipes()).thenReturn(recipes);
 
         //when
         String viewName = controller.getIndexPage(model);
@@ -74,7 +72,7 @@ class IndexControllerTest {
 
         //then
         assertEquals("index",viewName);
-        verify(recipeService, times(1)).getRecipe();
+        verify(recipeService, times(1)).getRecipes();
         verify(model, times(1)).addAttribute(eq("recipes"), anySet());
 
 

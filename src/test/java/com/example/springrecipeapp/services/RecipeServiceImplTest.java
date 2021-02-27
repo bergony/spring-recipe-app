@@ -27,6 +27,21 @@ class RecipeServiceImplTest {
     }
 
     @Test
+    public void getRecipes() throws Exception {
+
+        Recipe recipe = new Recipe();
+        HashSet receipesData = new HashSet();
+        receipesData.add(recipe);
+
+        when(recipeService.getRecipes()).thenReturn(receipesData);
+
+        Set<Recipe> recipes = recipeService.getRecipes();
+
+        assertEquals(recipes.size(), 1);
+        verify(recipeRepository, times(1)).findAll();
+    }
+
+    @Test
     void getRecipe() {
 
         Recipe recipe = new Recipe();
@@ -35,7 +50,7 @@ class RecipeServiceImplTest {
 
         when(recipeRepository.findAll()).thenReturn(recipeData);
 
-        Set<Recipe> recipeSet = recipeService.getRecipe();
+        Set<Recipe> recipeSet = recipeService.getRecipes();
 
         assertEquals(recipeSet.size(),1);
         verify(recipeRepository, times(1)).findAll();
