@@ -69,6 +69,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/dev.alexengrig/codecov-maven-plugin -->
+		<dependency>
+			<groupId>dev.alexengrig</groupId>
+			<artifactId>codecov-maven-plugin</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
