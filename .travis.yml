@@ -8,4 +8,6 @@ jdk:
 script: "mvn cobertura:cobertura"
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 5bbff86b-2af1-4a9e-8790-5bfb5e33476a
+  - export CODECOV_TOKEN="token"
+  - bash <(curl -s https://codecov.io/bash) -t token
+
