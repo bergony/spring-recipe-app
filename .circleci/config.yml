@@ -32,10 +32,8 @@ jobs:
             - v1-dependencies-
 
       - run: gradle dependencies
-          name: Download Dependencies
-            command: |
-              sudo chmod +x ./gradlew
-              ./gradlew androidDependencies
+          command: sudo chmod +x ./gradlew
+
 
       - save_cache:
           paths:
