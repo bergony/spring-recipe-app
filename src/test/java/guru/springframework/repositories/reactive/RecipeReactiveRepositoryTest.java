@@ -29,9 +29,9 @@ public class RecipeReactiveRepositoryTest {
 
         recipeReactiveRepository.save(recipe).block();
 
-        long count = recipeReactiveRepository.count().block();
+        Long count = recipeReactiveRepository.count().block();
 
-        assertEquals(1L, count);
+        assertEquals(Long.valueOf(1L), count);
     }
 
 }
