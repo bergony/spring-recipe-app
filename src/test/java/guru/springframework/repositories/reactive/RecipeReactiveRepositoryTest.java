@@ -14,7 +14,6 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @DataMongoTest
-@Ignore
 public class RecipeReactiveRepositoryTest {
 
     @Autowired

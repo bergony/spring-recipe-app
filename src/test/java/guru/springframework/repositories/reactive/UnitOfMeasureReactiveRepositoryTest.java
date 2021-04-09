@@ -11,15 +11,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @DataMongoTest
-public class UnitOfMeasureReactiverRepositoryTest extends TestCase {
+public class UnitOfMeasureReactiveRepositoryTest extends TestCase {
 
     public static final String EACH = "Each";
     @Autowired
-    UnitOfMeasureReactiverRepository unitOfMeasureReactiverRepository;
+    UnitOfMeasureReactiveRepository unitOfMeasureReactiveRepository;
 
     @Before
     public void setUp() {
-       unitOfMeasureReactiverRepository.deleteAll().block();
+       unitOfMeasureReactiveRepository.deleteAll().block();
     }
 
     @Test
@@ -27,9 +27,9 @@ public class UnitOfMeasureReactiverRepositoryTest extends TestCase {
         UnitOfMeasure uom = new UnitOfMeasure();
         uom.setDescription(EACH);
 
-        unitOfMeasureReactiverRepository.save(uom).block();
+        unitOfMeasureReactiveRepository.save(uom).block();
 
-        long count = unitOfMeasureReactiverRepository.count().block();
+        long count = unitOfMeasureReactiveRepository.count().block();
 
         assertEquals(1L, count);
 
@@ -40,9 +40,9 @@ public class UnitOfMeasureReactiverRepositoryTest extends TestCase {
         UnitOfMeasure uom = new UnitOfMeasure();
         uom.setDescription(EACH);
 
-        unitOfMeasureReactiverRepository.save(uom).block();
+        unitOfMeasureReactiveRepository.save(uom).block();
 
-        UnitOfMeasure fetchUOM = unitOfMeasureReactiverRepository.findByDescription(EACH).block();
+        UnitOfMeasure fetchUOM = unitOfMeasureReactiveRepository.findByDescription(EACH).block();
 
         assertEquals(EACH, fetchUOM != null ? fetchUOM.getDescription() : null);
 

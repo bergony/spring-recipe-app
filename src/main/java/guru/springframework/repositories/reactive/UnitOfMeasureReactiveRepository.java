@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.Optional;
 
-public interface UnitOfMeasureReactiverRepository extends ReactiveMongoRepository<UnitOfMeasure, String> {
+public interface UnitOfMeasureReactiveRepository extends ReactiveMongoRepository<UnitOfMeasure, String> {
 
     Mono<UnitOfMeasure> findByDescription(String description);
 
