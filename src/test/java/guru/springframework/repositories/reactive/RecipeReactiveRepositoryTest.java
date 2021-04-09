@@ -14,16 +14,17 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @DataMongoTest
 public class RecipeReactiveRepositoryTest {
+
     @Autowired
     RecipeReactiveRepository recipeReactiveRepository;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() throws Exception {
         recipeReactiveRepository.deleteAll().block();
     }
 
     @Test
-    public void testSaveRecipe() throws  Exception{
+    public void testRecipeSave() throws Exception {
         Recipe recipe = new Recipe();
         recipe.setDescription("Yummy");
 
@@ -33,5 +34,4 @@ public class RecipeReactiveRepositoryTest {
 
         assertEquals(Long.valueOf(1L), count);
     }
-
 }
