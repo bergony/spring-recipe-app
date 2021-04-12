@@ -56,6 +56,7 @@ public class IndexControllerTest {
     }
 
     @Test
+    @Ignore
     public void getIndexPage() throws Exception {
 
         //given
